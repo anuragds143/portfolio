@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anurag Kumar Tiwari | Software Developer</title>
+<meta name="description" content="Anurag Kumar Tiwari - Software Developer, Java Programmer and Generative AI enthusiast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #2563eb;
+  --dark: #14213d;
+  --muted: #64748b;
+  --bg: #f8fafc;
+  --white: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.7;
+}
+a { text-decoration:none; color:inherit; }
+nav {
+  position:fixed; top:0; width:100%; z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #e5eaf2;
+  padding:16px 8%;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { font-size:22px; font-weight:800; color:var(--primary); }
+.nav-links { display:flex; gap:28px; align-items:center; }
+.nav-links a { font-size:14px; font-weight:600; color:#475569; }
+.nav-links a:hover { color:var(--primary); }
+.menu { display:none; background:none; border:0; font-size:26px; cursor:pointer; }
+.container { width:84%; max-width:1150px; margin:auto; }
+section { padding:100px 0; }
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding-top:120px;
+  background:linear-gradient(135deg,#eff6ff,#fff 60%,#eef2ff);
+}
+.hero-content { max-width:750px; }
+.tag {
+  display:inline-block; padding:8px 15px;
+  border-radius:30px; background:#dbeafe;
+  color:#1d4ed8; font-size:13px; font-weight:700;
+  margin-bottom:24px;
+}
+.hero h1 { font-size:clamp(38px,6vw,68px); line-height:1.15; font-weight:800; }
+.hero h1 span { color:var(--primary); }
+.hero p { color:var(--muted); font-size:18px; margin:25px 0; max-width:650px; }
+.typing { color:var(--primary); font-weight:700; }
+.buttons { display:flex; gap:15px; flex-wrap:wrap; margin-top:30px; }
+.btn {
+  padding:13px 24px; border-radius:9px;
+  font-weight:700; font-size:14px;
+  display:inline-block; transition:.3s;
+  border:1px solid var(--primary);
+}
+.btn-primary { background:var(--primary); color:white; }
+.btn-outline { color:var(--primary); background:white; }
+.btn:hover { transform:translateY(-4px); box-shadow:0 10px 25px #2563eb25; }
+.section-title { text-align:center; margin-bottom:50px; }
+.section-title h2 { font-size:34px; font-weight:800; }
+.section-title p { color:var(--muted); margin-top:8px; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:45px; align-items:center; }
+.about-card {
+  background:white; padding:35px; border-radius:18px;
+  box-shadow:0 8px 35px #0f172a08;
+  border:1px solid #e8edf5;
+}
+.about-card h3 { font-size:23px; margin-bottom:15px; }
+.about-card p { color:var(--muted); margin-bottom:15px; }
+.info { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #edf0f5; font-size:14px; }
+.info span:first-child { font-weight:700; }
+.skills-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:18px;
+}
+.skill {
+  background:white; padding:24px 12px; text-align:center;
+  border-radius:13px; border:1px solid #e8edf5;
+  font-weight:700; transition:.3s;
+}
+.skill:hover { transform:translateY(-7px); border-color:var(--primary); color:var(--primary); }
+.projects-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:25px;
+}
+.project {
+  background:white; padding:28px; border-radius:16px;
+  border:1px solid #e8edf5; transition:.3s;
+}
+.project:hover { transform:translateY(-8px); box-shadow:0 15px 35px #0f172a10; }
+.project-icon {
+  width:52px; height:52px; display:grid; place-items:center;
+  background:#dbeafe; border-radius:13px; font-size:25px;
+  margin-bottom:20px;
+}
+.project h3 { margin-bottom:12px; font-size:20px; }
+.project p { color:var(--muted); font-size:14px; min-height:75px; }
+.tech { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; }
+.tech span {
+  background:#eff6ff; color:#2563eb; padding:5px 10px;
+  border-radius:20px; font-size:11px; font-weight:700;
+}
+.project a { color:var(--primary); font-weight:700; font-size:13px; }
+.education-card {
+  background:white; border-left:4px solid var(--primary);
+  padding:28px; border-radius:12px; box-shadow:0 5px 25px #0f172a08;
+}
+.education-card p { color:var(--muted); }
+.achievement {
+  background:linear-gradient(120deg,#1d4ed8,#4f46e5);
+  padding:45px; border-radius:20px; color:white;
+  text-align:center;
+}
+.achievement h2 { font-size:38px; }
+.achievement p { margin:10px auto 20px; max-width:600px; color:#e0e7ff; }
+.achievement a { color:white; text-decoration:underline; font-weight:700; }
+.contact-box {
+  background:white; padding:40px; border-radius:18px;
+  text-align:center; border:1px solid #e8edf5;
+}
+.contact-box p { color:var(--muted); margin:15px auto 25px; max-width:550px; }
+.socials { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+.socials a {
+  border:1px solid #dbeafe; color:var(--primary);
+  padding:10px 18px; border-radius:8px; font-weight:700;
+}
+.socials a:hover { background:#eff6ff; }
+footer { text-align:center; padding:25px; color:var(--muted); font-size:13px; }
+.reveal { opacity:0; transform:translateY(30px); transition:all .7s ease; }
+.reveal.show { opacity:1; transform:translateY(0); }
+#top {
+  position:fixed; bottom:25px; right:25px;
+  width:45px; height:45px; border:0; border-radius:50%;
+  background:var(--primary); color:white; font-size:20px;
+  cursor:pointer; display:none; z-index:90;
+}
+@media(max-width:768px) {
+  nav { padding:15px 6%; }
+  .menu { display:block; }
+  .nav-links {
+    display:none; position:absolute; top:65px; left:0; width:100%;
+    background:white; flex-direction:column; padding:25px;
+    border-bottom:1px solid #eee; gap:18px;
+  }
+  .nav-links.active { display:flex; }
+  .container { width:90%; }
+  .about-grid { grid-template-columns:1fr; }
+  section { padding:75px 0; }
+  .hero { min-height:90vh; }
+  .section-title h2 { font-size:29px; }
+  .achievement { padding:30px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home" class="logo">Anurag.dev</a>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content reveal">
+      <span class="tag">👋 Welcome to my portfolio</span>
+      <h1>Hi, I'm <span>Anurag Kumar Tiwari</span></h1>
+      <h2 style="font-size:25px;margin-top:15px">
+        I'm a <span class="typing" id="typing">Software Developer</span>
+      </h2>
+      <p>
+        A passionate B.Tech student who loves building projects,
+        solving challenging problems and learning new technologies.
+        I enjoy turning ideas into practical digital solutions.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">Explore My Work →</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>About Me</h2>
+      <p>Get to know me and my journey.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <h3>Who Am I?</h3>
+        <p>
+          I'm Anurag Kumar Tiwari, a B.Tech student at Raj Kumar
+          Goel Institute of Technology, Ghaziabad.
+        </p>
+        <p>
+          I am interested in software development, Java programming,
+          Data Structures and Algorithms, Python and Generative AI.
+          I continuously work on improving my technical skills
+          through projects and coding practice.
+        </p>
+        <p>
+          My goal is to become a skilled software developer and
+          contribute to meaningful real-world projects.
+        </p>
+      </div>
+      <div class="about-card reveal">
+        <h3>Quick Information</h3>
+        <div class="info"><span>Name</span><span>Anurag Kumar Tiwari</span></div>
+        <div class="info"><span>Role</span><span>Software Developer</span></div>
+        <div class="info"><span>College</span><span>RKGIT, Ghaziabad</span></div>
+        <div class="info"><span>Location</span><span>Buxar, Bihar</span></div>
+        <div class="info"><span>Focus</span><span>Java & AI</span></div>
+        <div class="info"><span>Experience</span><span>Projects & Internship</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:#eff6ff">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Technical Skills</h2>
+      <p>Technologies and tools I work with.</p>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill">☕ Java</div>
+      <div class="skill">🐍 Python</div>
+      <div class="skill">🌐 HTML5</div>
+      <div class="skill">🎨 CSS3</div>
+      <div class="skill">⚡ JavaScript</div>
+      <div class="skill">🗄️ SQL</div>
+      <div class="skill">📊 Pandas</div>
+      <div class="skill">🤖 Machine Learning</div>
+      <div class="skill">🧠 LangChain</div>
+      <div class="skill">🚀 Streamlit</div>
+      <div class="skill">🔧 Git & GitHub</div>
+      <div class="skill">🧩 DSA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>My Projects</h2>
+      <p>Some of the projects I have worked on.</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project reveal">
+        <div class="project-icon">🛒</div>
+        <h3>Amazon Clone</h3>
+        <p>
+          An e-commerce website project inspired by Amazon,
+          created to practice frontend development and website design.
+        </p>
+        <div class="tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <a href="https://github.com/anuragds143" target="_blank">GitHub Profile →</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon">🌐</div>
+        <h3>Personal Portfolio</h3>
+        <p>
+          A responsive personal website showcasing my skills,
+          projects, education and developer journey.
+        </p>
+        <div class="tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <a href="https://github.com/anuragds143" target="_blank">GitHub Profile →</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon">🤖</div>
+        <h3>Machine Learning Project</h3>
+        <p>
+          A machine learning project developed to explore
+          Python, data processing and predictive modelling.
+        </p>
+        <div class="tech">
+          <span>Python</span><span>ML</span><span>Pandas</span>
+        </div>
+        <a href="https://github.com/anuragds143" target="_blank">GitHub Profile →</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-icon">🧠</div>
+        <h3>Datheon Generative AI</h3>
+        <p>
+          An internship project involving Streamlit, LangChain
+          and Generative AI integrations.
+        </p>
+        <div class="tech">
+          <span>Python</span><span>LangChain</span><span>Streamlit</span>
+        </div>
+        <a href="https://github.com/anuragds143/Datheon_Python_-_Generative_AI_-_LangChain_Internship"
+           target="_blank">View GitHub Project →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background:#eff6ff">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Education</h2>
+      <p>My academic journey.</p>
+    </div>
+    <div class="education-card reveal">
+      <h3>🎓 Bachelor of Technology (B.Tech)</h3>
+      <h4 style="color:var(--primary);margin:8px 0">
+        Raj Kumar Goel Institute of Technology
+      </h4>
+      <p>Ghaziabad, Uttar Pradesh</p>
+      <p>Currently pursuing undergraduate studies.</p>
+      <p style="margin-top:12px">
+        Focus: Programming, Software Development, DSA and Technology.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LEETCODE -->
+<section id="achievement">
+  <div class="container">
+    <div class="achievement reveal">
+      <h2>200+ Problems Solved</h2>
+      <p>
+        Consistently practising Data Structures and Algorithms
+        and improving my problem-solving skills through LeetCode.
+      </p>
+      <a href="https://leetcode.com/u/anuragkr_tiwari/" target="_blank">
+        Visit My LeetCode Profile →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Let's Connect</h2>
+      <p>Have an opportunity or project in mind? Let's talk!</p>
+    </div>
+    <div class="contact-box reveal">
+      <h3>Get In Touch</h3>
+      <p>
+        I'm always interested in learning, collaborating on projects
+        and connecting with fellow developers.
+      </p>
+      <div class="socials">
+        <a href="https://github.com/anuragds143" target="_blank">GitHub</a>
+        <a href="https://leetcode.com/u/anuragkr_tiwari/" target="_blank">LeetCode</a>
+        <a href="#" id="linkedin">LinkedIn</a>
+        <a href="mailto:YOUR_EMAIL@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Anurag Kumar Tiwari. Built with ❤️ using HTML, CSS & JavaScript.</p>
+</footer>
+
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+// Mobile navigation
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+menu.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  menu.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menu.textContent = "☰";
+  });
+});
+
+// Animated typing effect
+const roles = [
+  "Software Developer",
+  "Java Programmer",
+  "Problem Solver",
+  "Generative AI Enthusiast"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const typing = document.getElementById("typing");
+
+function typeEffect() {
+  const current = roles[roleIndex];
+
+  typing.textContent = current.substring(0, charIndex);
+
+  if (!deleting && charIndex < current.length) {
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else if (deleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(typeEffect, 50);
+  } else {
+    deleting = !deleting;
+    if (!deleting) roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeEffect, 700);
+  }
+}
+typeEffect();
+
+// Scroll reveal animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+// Back to top
+const topButton = document.getElementById("top");
+
+window.addEventListener("scroll", () => {
+  topButton.style.display = window.scrollY > 400 ? "block" : "none";
+});
+
+topButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Dynamic copyright year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Add your real LinkedIn profile URL here
+document.getElementById("linkedin").href = "YOUR_LINKEDIN_URL";
+</script>
+
+</body>
+</html>
