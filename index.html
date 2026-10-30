@@ -10,6 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+    margin-bottom: 25px;
+    transition: 0.4s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.08);
+}
 :root {
   --primary: #2563eb;
   --dark: #14213d;
@@ -180,6 +194,9 @@ footer { text-align:center; padding:25px; color:var(--muted); font-size:13px; }
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <img src="profile.jpg"
+     alt="Anurag Kumar Tiwari"
+     class="profile-photo">
   <div class="container">
     <div class="hero-content reveal">
       <span class="tag">👋 Welcome to my portfolio</span>
